@@ -5,7 +5,6 @@ import com.azure.storage.blob.BlobContainerClient;
 import com.azure.storage.blob.BlobContainerClientBuilder;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -15,7 +14,7 @@ public class RestEndpoint {
             value = "/count",
             produces = MediaType.APPLICATION_JSON_VALUE
     )
-    public String count(@RequestParam String secret) {
+    public String count() {
         BlobContainerClient containerClient = new BlobContainerClientBuilder()
                 .endpoint("https://sa2weidxu.blob.core.windows.net")
                 .containerName("container1")
