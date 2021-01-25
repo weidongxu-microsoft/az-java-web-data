@@ -18,7 +18,7 @@ public class RestEndpoint {
         BlobContainerClient containerClient = new BlobContainerClientBuilder()
                 .endpoint("https://sa2weidxu.blob.core.windows.net")
                 .containerName("container1")
-                .credential(new ManagedIdentityCredentialBuilder().clientId("64ed52b7-9a97-477e-b6fa-118c86f89d13").build())
+                .credential(new ManagedIdentityCredentialBuilder().build())
                 .buildClient();
 
         long count = containerClient.listBlobs().stream().count();
